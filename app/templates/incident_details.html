@@ -1,0 +1,46 @@
+<!-- incident_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incident Details</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="incident-container">
+        <h1>{{ incident.title }}</h1>
+        <div class="status-bar {{ incident.status | lower }}">
+            Status: {{ incident.status }}
+        </div>
+
+        <div class="incident-details">
+            <p><strong>Summary:</strong> {{ incident.summary }}</p>
+            <p><strong>Start Time:</strong> {{ incident.start_time }}</p>
+            {% if incident.end_time %}
+                <p><strong>End Time:</strong> {{ incident.end_time }}</p>
+            {% endif %}
+        </div>
+
+        {% if incident.before_image or incident.after_image %}
+        <div class="incident-images">
+            <h3>Images</h3>
+            <div class="before-after-container">
+                {% if incident.before_image %}
+                <div class="image-container">
+                    <h4>Before</h4>
+                    <img src="{{ incident.before_image }}" alt="Before Image" class="incident-image">
+                </div>
+                {% endif %}
+                {% if incident.after_image %}
+                <div class="image-container">
+                    <h4>After</h4>
+                    <img src="{{ incident.after_image }}" alt="After Image" class="incident-image">
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

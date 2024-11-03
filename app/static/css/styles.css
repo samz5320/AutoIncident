@@ -1,0 +1,131 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Page Styles */
+.dashboard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline {
+    border-left: 2px solid #333;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 10px;
+}
+
+.incident-summary {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.incident-summary h2 {
+    margin: 0;
+}
+
+.status {
+    font-weight: bold;
+}
+
+.status.resolved {
+    color: green;
+}
+
+.status.ongoing {
+    color: red;
+}
+
+/* Incident Details Page Styles */
+.incident-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-bar {
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.status-bar.resolved {
+    color: white;
+    background-color: green;
+}
+
+.status-bar.ongoing {
+    color: white;
+    background-color: red;
+}
+
+.incident-details p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.incident-images {
+    margin-top: 20px;
+}
+
+.before-after-container {
+    display: flex;
+    gap: 20px;
+}
+
+.image-container {
+    width: 100%;
+    text-align: center;
+}
+
+.incident-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+}

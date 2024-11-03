@@ -1,0 +1,30 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Status Dashboard</h1>
+        <div class="timeline">
+            {% for incident in incidents %}
+            <div class="timeline-item">
+                <div class="incident-summary">
+                    <h2><a href="/incident/{{ loop.index }}">{{ incident.title }}</a></h2>
+                    <p>Status: <span class="status {{ incident.status | lower }}">{{ incident.status }}</span></p>
+                    <p>{{ incident.summary }}</p>
+                    <p><strong>Start Time:</strong> {{ incident.start_time }}</p>
+                    {% if incident.end_time %}
+                        <p><strong>End Time:</strong> {{ incident.end_time }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
